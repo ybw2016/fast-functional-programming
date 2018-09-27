@@ -14,7 +14,7 @@
 |reduce()            |将List<T>变成1个元素                                    |StringJoin, StringJoin2
 |collect()           |返回值                                                 |GroupBy
 |forEach()           |遍历                                                   |HelloWorld
-|
+| ------ | ------ | ------ |
 |2. 分组              |                                                       |
 |groupingBy          |分组                                                   |GroupBy
 |partitionBy         |将List<T>分成两个子List<T>                              |PartitionBy
