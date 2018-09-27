@@ -48,3 +48,5 @@
 |3. IfElseCheck              |if-else判断优化
 |4. NullOptional             |空值判断优化
 |5. Break                    |for循环中的break,continue转换
+
+## 设计模式内容来自于书籍：https://item.jd.com/11673259.html
