@@ -15,7 +15,7 @@
 |collect()           |返回值                                                 |GroupBy
 |forEach()           |遍历                                                   |HelloWorld
 |
-|2. 分组
+|2. 分组              |                                                       |
 |groupingBy          |分组                                                   |GroupBy
 |partitionBy         |将List<T>分成两个子List<T>                              |PartitionBy
 |counting()          |记录数                                                 |GroupBy
@@ -24,13 +24,13 @@
 |toMap()             |Map<K,V>                                              |ToMap
 |mapToDouble()       |映射成double类型                                        |MinMaxAvgSum
 |summaryStatistics() |数据分析,获取min, max, avg, sum                         |MinMaxAvgSum
-|
-|3. 排序
+|                                                                           
+|3. 排序              |                                                       |
 |sorted()            |排序(默认为升序)                                         |OrderBy
 |reversed()          |倒序(与原顺序相反)                                       |OrderBy
 |reversedOrder()     |倒序                                                    |OrderBy
 |
-|4. 查找
+|4. 查找              |                                                       |
 |findFirst()         |查找第一个匹配的元素(找不到返回false)                      |Search
 |findAny()           |查找满足条件的任意一个                                    |Search
 |orElse()            |未满足条件时取指定值                                      |Search
