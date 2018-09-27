@@ -44,7 +44,6 @@ public class TradeService {
         List<Trade> trades = new ArrayList<Trade>();
         trades.add(new Trade(User.ZHOU_HONG_YI, Security.S_600000, EntrustBs.BUY, 600, 20.52, DateUtil.parse("2016-09-13 10:22:39")));
         trades.add(new Trade(User.ZHOU_HONG_YI, Security.S_000002, EntrustBs.BUY, 300, 9.6, DateUtil.parse("2016-09-13 14:20:18")));
-
         return trades;
     }
 

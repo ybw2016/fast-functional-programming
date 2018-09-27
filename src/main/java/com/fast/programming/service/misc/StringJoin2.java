@@ -37,7 +37,7 @@ public class StringJoin2 extends FeatureBase {
     protected void runNew() {
         String hobbyStr = getHobbies()
                 .stream()
-                .collect(Collectors.joining(", ", "[", "]"));
+                .collect(Collectors.joining(",", "[", "]"));
         println(hobbyStr);
     }
 }

@@ -9,5 +9,8 @@
         <module name="fast-functional-programming" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="fast-functional-programming" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

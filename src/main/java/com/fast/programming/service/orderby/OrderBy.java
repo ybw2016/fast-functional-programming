@@ -45,23 +45,24 @@ public class OrderBy extends FeatureBase {
 
     @Override
     protected void runNew() {
-//        TradeService.getTrades()
-//                .stream()
-//                .sorted((trade1, trade2) -> {
-//                    // 按股票成交数量排序
-//                    int result = Double.compare(trade2.getDealAmount(), trade1.getDealAmount());
-//                    if (result == 0) {
-//                        return Double.compare(trade2.getDealBalance(), trade1.getDealBalance());
-//                    }
-//                    return result;
-//                })
-//                .collect(Collectors.toList())
-//                .forEach(trade -> System.out.println(trade));
+        TradeService.getTrades()
+                .stream()
+                .sorted((trade1, trade2) -> {
+                    // 按股票成交数量排序
+                    int result = Double.compare(trade2.getDealAmount(), trade1.getDealAmount());
+                    if (result == 0) {
+                        return Double.compare(trade2.getDealBalance(), trade1.getDealBalance());
+                    }
+                    return result;
+                })
+                .collect(Collectors.toList())
+                .forEach(trade -> System.out.println(trade));
 
+        /*
         TradeService.getTrades().stream()
-                //.sorted((t1, t2) -> Double.valueOf(t2.getDealAmount()).compareTo(Double.valueOf(t1.getDealAmount())))
                 .sorted((t1, t2) -> Double.compare(t1.getDealAmount(), t2.getDealAmount()))
                 .collect(Collectors.toList());
+        */
 
         // 流式排序不改变集合顺序
         /*

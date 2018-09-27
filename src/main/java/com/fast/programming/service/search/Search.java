@@ -4,6 +4,8 @@ import com.fast.programming.model.Trade;
 import com.fast.programming.service.FeatureBase;
 import com.fast.programming.service.TradeService;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 /**
@@ -18,46 +20,31 @@ public class Search extends FeatureBase {
 
     @Override
     protected void runOld() {
-//int index =0;
-//index ++;
-//if(index ==0){
-//    continue;
-//}
+        List<Trade> trades = TradeService.getTrades();
+        List<Trade> searchTrades = new ArrayList<>();
+
+        int skip = 2;
+        int limit = 3;
+        for (int i = 0; i < trades.size(); i++) {
+            if ((i + 1) > skip) {
+                searchTrades.add(trades.get(i));
+            }
+            if (((i + 1) - skip) == limit) {
+                break;
+            }
+        }
+        searchTrades.forEach(System.out::println);
     }
 
     @Override
     protected void runNew() {
-        printTitle("跳过第m=1条记录, 查找n=3条记录");
+        printTitle("跳过前m=2条记录, 查找n=3条记录");
         TradeService.getTrades()
                 .stream()
-                .skip(1)
+                .skip(2)
                 .limit(3)
                 .collect(Collectors.toList())
                 .forEach(trade -> println(trade));
-        println();
-
-        printTitle("第1条记录");
-        Trade tradeFirst = TradeService.getTrades()
-                .stream()
-                .findFirst()
-                .get();
-        println(tradeFirst);
-        println();
-
-        printTitle("第任意条记录");
-        Trade tradeAny = TradeService.getTrades()
-                .stream()
-                .findAny()
-                .get();
-        println(tradeAny);
-        println();
-
-        printTitle("第任意条记录(并行)");
-        Trade tradeAnyParallel = TradeService.getTrades()
-                .parallelStream()
-                .findAny()
-                .get();
-        println(tradeAnyParallel);
         println();
     }
 }

@@ -48,9 +48,9 @@ public class GetAndSetFieldValue extends FeatureBase {
         StudentNew studentNew = getLatestStudent();
 
         // 将studentNew的字段绑定到student中
-        checkAndBindStudent1(student, studentNew, stuNew -> stuNew.getUserName(), stu -> stu.setUserName(studentNew.getUserName()));
-        checkAndBindStudent1(student, studentNew, stuNew -> stuNew.getMobile(), stu -> stu.setMobile(studentNew.getMobile()));
-        checkAndBindStudent1(student, studentNew, stuNew -> stuNew.getAddress(), stu -> stu.setAddress(studentNew.getAddress()));
+        checkAndBindStudent(student, studentNew, stuNew -> stuNew.getUserName(), stu -> stu.setUserName(studentNew.getUserName()));
+        checkAndBindStudent(student, studentNew, stuNew -> stuNew.getMobile(), stu -> stu.setMobile(studentNew.getMobile()));
+        checkAndBindStudent(student, studentNew, stuNew -> stuNew.getAddress(), stu -> stu.setAddress(studentNew.getAddress()));
 
         // 100个赋值  100 * 3 = 300行
         // 100行
@@ -62,14 +62,8 @@ public class GetAndSetFieldValue extends FeatureBase {
         return new StudentNew("张三", "13811119999", "北京市海淀区启迪科技大厦D座27层");
     }
 
-    private void checkAndBindStudent(Student student, StudentNew studentNew, FieldGetter getter, FieldBinder binder) {
-        if (org.apache.commons.lang3.StringUtils.isNotEmpty(getter.getValue(studentNew))) {
-            binder.bindValue(student);
-        }
-    }
-
     // 如果Getter, Binder有多个参数的时候，就应该自定义函数式接口
-    private void checkAndBindStudent1(Student student, StudentNew studentNew, Function<StudentNew, String> getter, Consumer<Student> binder) {
+    private void checkAndBindStudent(Student student, StudentNew studentNew, Function<StudentNew, String> getter, Consumer<Student> binder) {
         if (org.apache.commons.lang3.StringUtils.isNotEmpty(getter.apply(studentNew))) {
             binder.accept(student);
         }

@@ -32,14 +32,13 @@ public class StringJoin extends FeatureBase {
 
     @Override
     protected void runNew() {
-//        String hobbyStr = getHobbies()
-//                .stream()
-//                .reduce("", (current, next) -> current + next + ",");
-//        println(hobbyStr);
+        String hobbyStr = getHobbies()
+                .stream()
+                .reduce("", (current, next) -> current + next + ",");
+        println(hobbyStr);
 
-        List<Integer> arr = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-        // List<T> -> T
-        int result = arr.stream().reduce(0, (current, next) -> current + next);
-        System.out.println(result);
+//        List<Integer> arr = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+//        int result = arr.stream().reduce(0, (current, next) -> current + next);
+//        System.out.println(result);
     }
 }

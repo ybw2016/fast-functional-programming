@@ -13,20 +13,20 @@ public class Command extends FeatureBase {
 
     @Override
     protected void runNew() {
-      /*  Macro macro = new Macro();
+        // 演化成lambda过程
+        /*
+        Macro macro = new Macro();
         Editor editor = new EditorImpl();
         macro.record(() -> new Open(editor));
         macro.record(() -> new Save(editor));
         macro.record(() -> new Close(editor));
-    */
 
-      /*
         Macro macro = new Macro();
         Editor editor = new EditorImpl();
         macro.record(() -> editor.open());
         macro.record(() -> editor.save());
         macro.record(() -> editor.close());
-*/
+        */
 
         Macro macro = new Macro();
         Editor editor = new EditorImpl();
@@ -35,6 +35,5 @@ public class Command extends FeatureBase {
         macro.record(editor::close);
 
         macro.run();
-
     }
 }

@@ -38,13 +38,15 @@ public class Filter extends FeatureBase {
 
     @Override
     protected void runNew() {
-//        printTitle("distinct 1");
-//        TradeService.getTrades()
-//                .stream()
-//                .map(trade -> trade.getUser().getUserName())// 筛选人名
-//                .distinct() /* 过滤重复 */  //去重
-//                .forEach(userName -> println(userName));
+        // 方法1
+        printTitle("distinct 1");
+        TradeService.getTrades()
+                .stream()
+                .map(trade -> trade.getUser().getUserName())// 筛选人名
+                .distinct() /* 过滤重复 */  //去重
+                .forEach(userName -> println(userName));
 
+        // 方法2
         printTitle("distinct 2");
         TradeService.getTrades()
                 .stream()

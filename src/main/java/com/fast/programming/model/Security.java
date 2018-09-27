@@ -99,7 +99,7 @@ public class Security {
                 ", stockName='" + stockName + '\'' +
                 ", closePrice=" + closePrice +
                 ", stockType=" + stockType.getName() +
-                ", exchangeType=" + (exchangeType != null ? exchangeType.getName() : "") +
+                ", exchangeType=" + exchangeType +
                 ", exchTypeStr=" + exchTypeStr +
                 '}';
     }
